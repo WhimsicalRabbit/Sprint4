@@ -5,6 +5,8 @@ import { notesRouter } from "../notes/infrastructrure/http/notesRouters";
 const app = express();
 const port = process.env.PORT ?? 8080;
 
+app.use(express.json());
+
 app.use("/notes", notesRouter);
 
 app.listen(port, () => {

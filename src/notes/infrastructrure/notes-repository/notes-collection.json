@@ -1,10 +1,12 @@
 [
   {
-    "id": "1",
-    "body": "Bunny"
+    "id": 1,
+    "body": "Bunny",
+    "completed": false
   },
   {
-    "id": "2",
-    "body": "Rabbit"
+    "id": 2,
+    "body": "Rabbit",
+    "completed": false
   }
 ]

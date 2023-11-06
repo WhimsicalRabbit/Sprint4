@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Request, Response } from "express";
 
 import { EmptyNotes } from "../../application/empty-notes";
@@ -7,6 +6,7 @@ import { NotesCompiler } from "../../application/notes-compiler";
 export class NotesController {
   constructor(private readonly compiler: NotesCompiler) {}
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   async run(_req: Request, res: Response) {
     try {
       const note = await this.compiler.run();

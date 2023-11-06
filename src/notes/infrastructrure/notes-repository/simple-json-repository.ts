@@ -9,4 +9,18 @@ export class JsonRepository implements NotesRepository {
 
     return notes;
   }
+
+  // eslint-disable-next-line @typescript-eslint/require-await
+  async createNote(note: Note): Promise<Note> {
+    const createdNote = new Note(
+      notesCollection.length + 1,
+      note.body,
+      note.completed
+    );
+
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
+    notesCollection.push(createdNote);
+
+    return createdNote;
+  }
 }
