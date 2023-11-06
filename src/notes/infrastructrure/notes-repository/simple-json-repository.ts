@@ -1,16 +1,15 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { Note } from "../../domain/note";
 import { NotesRepository } from "../../domain/notes-repository";
 import notesCollection from "./notes-collection.json";
 
 export class JsonRepository implements NotesRepository {
-  // eslint-disable-next-line @typescript-eslint/require-await
   async getNotes(): Promise<Note[]> {
     const notes = notesCollection;
 
     return notes;
   }
 
-  // eslint-disable-next-line @typescript-eslint/require-await
   async createNote(note: Note): Promise<Note> {
     const createdNote = new Note(
       notesCollection.length + 1,
@@ -18,9 +17,16 @@ export class JsonRepository implements NotesRepository {
       note.completed
     );
 
-    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
     notesCollection.push(createdNote);
 
     return createdNote;
+  }
+
+  async deleteNote(id: number): Promise<Note[]> {
+    const notes = notesCollection.filter((note) => note.id !== id);
+
+    notesCollection.splice(id - 1, 1);
+
+    return notes;
   }
 }

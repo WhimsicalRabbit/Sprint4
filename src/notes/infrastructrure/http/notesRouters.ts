@@ -1,12 +1,18 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import express from "express";
 
-import { createController, notesController } from "../dependencies";
+import {
+  createController,
+  deleteController,
+  notesController,
+} from "../dependencies";
 
 const notesRouter = express.Router();
 
-// eslint-disable-next-line @typescript-eslint/no-misused-promises
 notesRouter.get("/", notesController.run.bind(notesController));
-// eslint-disable-next-line @typescript-eslint/no-misused-promises
+
 notesRouter.post("/", createController.run.bind(createController));
+
+notesRouter.delete("/:id", deleteController.run.bind(deleteController));
 
 export { notesRouter };
