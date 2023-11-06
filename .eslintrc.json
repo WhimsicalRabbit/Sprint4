@@ -5,7 +5,7 @@
       "node": true
     },
     "parserOptions": {
-      "project": ["./tsconfig.json"]
+      "project": ["Sprint4/tsconfig.json"]
     },
     "rules": {
         "@typescript-eslint/no-non-null-assertion": "off",
@@ -15,7 +15,18 @@
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-unsafe-call": "off",
         "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-floating-promises": "off"
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/no-misused-promises": [
+          2,
+          {
+              "checksVoidReturn": {
+                  "attributes": false
+              }
+          }
+      ],
+        "prettier/prettier": ["error",{
+          "endOfLine": "auto"}
+        ]
       },
       "overrides": [
         {
