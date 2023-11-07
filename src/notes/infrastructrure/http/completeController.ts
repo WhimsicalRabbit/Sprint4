@@ -1,24 +1,25 @@
 import { Request, Response } from "express";
 
-import { DeleteNote } from "../../application/delete-note";
+import { CompleteNote } from "../../application/complete-note";
 import { NoteNotFound } from "../../application/note-not-found";
 
-export class DeleteController {
-  constructor(private readonly erase: DeleteNote) {}
+export class CompleteController {
+  constructor(private readonly complete: CompleteNote) {}
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   async run(req: Request, res: Response) {
     try {
       const { id } = req.params;
 
-      const note = await this.erase.delete(Number(id));
+      const note = await this.complete.complete(Number(id));
 
-      res.status(200).json({ "Object deleted": note });
+      res.status(201).json({ "updated note": note });
     } catch (err) {
       if (err instanceof NoteNotFound) {
-        return res.status(404).send();
+        res.status(404).send();
       }
-      res.status(500).send();
+
+      return res.status(500).send();
     }
   }
 }

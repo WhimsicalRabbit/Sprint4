@@ -1,12 +1,22 @@
 [
   {
     "id": 1,
-    "body": "Bunny",
+    "body": "Pat the Rabbit 🐇",
     "completed": false
   },
   {
     "id": 2,
-    "body": "Rabbit",
+    "body": "Hold the Rabbit 🐇",
+    "completed": false
+  },
+  {
+    "id": 3,
+    "body": "Cherish the Rabbit 🐇",
+    "completed": false
+  },
+  {
+    "id": 4,
+    "body": "Forfeit all mortal possessions to the Rabbit 🐇",
     "completed": false
   }
 ]

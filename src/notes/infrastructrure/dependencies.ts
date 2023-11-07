@@ -1,6 +1,8 @@
+import { CompleteNote } from "../application/complete-note";
 import { CreateNote } from "../application/create-note";
 import { DeleteNote } from "../application/delete-note";
 import { NotesCompiler } from "../application/notes-compiler";
+import { CompleteController } from "./http/completeController";
 import { CreateController } from "./http/createController";
 import { DeleteController } from "./http/deleteController";
 import { NotesController } from "./http/notesControllers";
@@ -17,4 +19,12 @@ const createController = new CreateController(noteCreator);
 const noteEraser = new DeleteNote(jsonRepo);
 const deleteController = new DeleteController(noteEraser);
 
-export { createController, deleteController, notesController };
+const noteCompleter = new CompleteNote(jsonRepo);
+const completeController = new CompleteController(noteCompleter);
+
+export {
+  completeController,
+  createController,
+  deleteController,
+  notesController,
+};

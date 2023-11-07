@@ -22,11 +22,21 @@ export class JsonRepository implements NotesRepository {
     return createdNote;
   }
 
-  async deleteNote(id: number): Promise<Note[]> {
-    const notes = notesCollection.filter((note) => note.id !== id);
+  async deleteNote(id: number): Promise<Note | null> {
+    const deletedNote = notesCollection.find((note) => note.id === id);
 
     notesCollection.splice(id - 1, 1);
 
-    return notes;
+    return deletedNote ? deletedNote : null;
+  }
+
+  async completeNote(id: number): Promise<Note | null> {
+    const completedNote = notesCollection.find((note) => note.id === id);
+
+    if (completedNote) {
+      completedNote.completed = true;
+    }
+
+    return completedNote ? completedNote : null;
   }
 }
