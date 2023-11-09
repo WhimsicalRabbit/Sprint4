@@ -5,7 +5,7 @@
       "node": true
     },
     "parserOptions": {
-      "project": ["Sprint4/tsconfig.json"]
+      "project": ["tsconfig.json", "Sprint4/tsconfig.json"]
     },
     "rules": {
         "@typescript-eslint/no-non-null-assertion": "off",
