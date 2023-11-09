@@ -102,7 +102,7 @@ describe("middlewares", () => {
 
       authentication(req as Request, res as Response, next as NextFunction);
 
-      expect(res.status).toHaveBeenCalledWith(401);
+      expect(res.status).toHaveBeenCalledWith(expectedStatus);
 
       expect(res.send).toHaveBeenCalledWith(expectedMessage);
     });
