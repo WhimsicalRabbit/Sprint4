@@ -5,8 +5,8 @@ export const authentication = (
   res: Response,
   next: NextFunction
 ): void => {
-  const user = "user";
-  const key = "1234";
+  const user = process.env.USER!;
+  const key = process.env.PASSWORD!;
   const auth = req.headers.authorization;
 
   if (auth) {

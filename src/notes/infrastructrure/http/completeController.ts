@@ -13,7 +13,7 @@ export class CompleteController {
 
       const note = await this.complete.complete(Number(id));
 
-      res.status(201).json({ "updated note": note });
+      res.status(200).json({ "updated note": note });
     } catch (err) {
       if (err instanceof NoteNotFound) {
         res.status(404).send();

@@ -5,6 +5,6 @@ export const noCacheMiddleware = (
   res: Response,
   next: NextFunction
 ): void => {
-  res.set("Cache-cControl", "no-cache");
+  res.set("Cache-Control", "no-cache");
   next();
 };

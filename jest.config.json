@@ -5,7 +5,7 @@
     "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
     "globals": {
       "ts-jest": {
-        "tsconfig": ["tsconfig.json", "Sprint4/tsconfig.json"],
+        "tsconfig": [],
         "module": "ES6"
       }
     }

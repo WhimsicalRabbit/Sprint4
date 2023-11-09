@@ -39,3 +39,6 @@ jobs:
 
       - name: ✅ Test
         run: npm run test
+        env:
+          USER: ${{ secrets.USER }}
+          PASSWORD: ${{ secrets.PASSWORD }}
