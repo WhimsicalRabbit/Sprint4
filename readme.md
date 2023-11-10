@@ -7,7 +7,7 @@ In this project, the code is organized according to the principles of Hexagonal 
 To get started, you first need to clone the repository:
 
 ```bash
-git clone https://github.com/cpcastells/sprint4-apiToDo-node.git
+git clone https://github.com/WhimsicalRabbit/Sprint4.git
 ```
 
 Then, install the project dependencies:
