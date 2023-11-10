@@ -6,8 +6,7 @@ import { NoteNotFound } from "../../application/note-not-found";
 export class CompleteController {
   constructor(private readonly complete: CompleteNote) {}
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  async run(req: Request, res: Response) {
+  async run(req: Request, res: Response): Promise<Response | undefined> {
     try {
       const { id } = req.params;
 

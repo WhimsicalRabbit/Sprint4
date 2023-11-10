@@ -6,8 +6,7 @@ import { NotesCompiler } from "../../application/notes-compiler";
 export class NotesController {
   constructor(private readonly compiler: NotesCompiler) {}
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  async run(_req: Request, res: Response) {
+  async run(_req: Request, res: Response): Promise<Response | undefined> {
     try {
       const note = await this.compiler.run();
       res.status(200).send(note);

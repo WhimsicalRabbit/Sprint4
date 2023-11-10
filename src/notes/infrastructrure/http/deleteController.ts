@@ -6,8 +6,7 @@ import { NoteNotFound } from "../../application/note-not-found";
 export class DeleteController {
   constructor(private readonly erase: DeleteNote) {}
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  async run(req: Request, res: Response) {
+  async run(req: Request, res: Response): Promise<Response | undefined> {
     try {
       const { id } = req.params;
 
